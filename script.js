@@ -1,3 +1,36 @@
+// ==========================================
+// DISABLE RIGHT CLICK & INSPECT ELEMENTS
+// ==========================================
+
+// 1. Right-Click Context Menu Disable karna
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    // Optional: Aap yahan alert bhi de sakte hain ya chup-chap rok sakte hain
+});
+
+// 2. Developer Tools Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U) Block karna
+document.addEventListener('keydown', function (e) {
+    // F12 key
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+    
+    // Ctrl + Shift + I (Inspect) or Ctrl + Shift + J (Console) or Ctrl + Shift + C (Element Inspector)
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+        e.preventDefault();
+    }
+    
+    // Ctrl + U (View Page Source)
+    if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+    }
+    
+    // Ctrl + S (Save Page) - Optional, agar page save hone se rokna ho
+    if (e.ctrlKey && (e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+    }
+});
+
 /* =========================================================
    GLOBAL HEADER, THEME TOGGLE & SECTION 01 SCRIPTS (START)
 ========================================================= */
